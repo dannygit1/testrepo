@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#4 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  
+  <title>Build Your First Android App in Kotlin</title>
+  <link rel="stylesheet" href="./3rd color_files/css">
+  <link rel="stylesheet" href="./3rd color_files/icon">
+  <link rel="stylesheet" href="./3rd color_files/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+<script src="./3rd color_files/analytics.js.download"></script></head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" environment="web" category="null"></google-codelab-analytics>
+  <google-codelab codelab-gaid="" id="build-your-first-android-app-kotlin" environment="web" feedback-link="https://github.com/google-developer-training/first-android-app/issues/new?assignees=&amp;labels=&amp;template=first-android-app---kotlin.md&amp;title=First+Android+app+codelab%3A+" selected="4" google-codelab-ready="" codelab-title="Build Your First Android App in Kotlin" anayltics-ready="anayltics-ready"><div id="drawer"><div class="codelab-time-container" style="display: none;"></div><div class="steps"><ol><li completed=""><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#0"><span class="step"><span>Welcome!</span></span></a></li><li completed=""><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#1"><span class="step"><span>Install Android Studio</span></span></a></li><li completed=""><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#2"><span class="step"><span>Task: Create your first project</span></span></a></li><li completed=""><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#3"><span class="step"><span>Task: Explore the layout editor</span></span></a></li><li completed="" selected=""><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#4"><span class="step"><span>Task: Add color resources</span></span></a></li><li><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#5"><span class="step"><span>Task: Add views and constraints</span></span></a></li><li><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#6"><span class="step"><span>Task: Update the appearance of the buttons and the TextView</span></span></a></li><li><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#7"><span class="step"><span>Task: Make your app interactive</span></span></a></li><li><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#8"><span class="step"><span>Task: Implement the second fragment</span></span></a></li><li><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#9"><span class="step"><span>Learn more</span></span></a></li></ol></div><div class="metadata"><a target="_blank" href="https://github.com/google-developer-training/first-android-app/issues/new?assignees=&amp;labels=&amp;template=first-android-app---kotlin.md&amp;title=First+Android+app+codelab%3A+"><i class="material-icons">bug_report</i> Report a mistake</a></div></div><div id="codelab-title"><div id="codelab-nav-buttons"><a href="https://codelabs.developers.google.com/" id="arrow-back"><i class="material-icons">close</i></a><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#" id="menu"><i class="material-icons">menu</i></a></div><h1 class="title">Build Your First Android App in Kotlin</h1><div class="codelab-time-container" style="display: none;"></div><devsite-user></devsite-user></div><div id="main"><div id="steps"><google-codelab-step label="Welcome!" duration="0" step="1" style="transform: translate3d(-110%, 0px, 0px);"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">1. Welcome!</h2>
+        <p class="image-container"><img style="width: 624.00px" src="./3rd color_files/24a081ec057c026e.png"></p>
+<p>In this codelab, you'll learn how to build and run your first Android app in the Kotlin programming language. (If you're looking for the <a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app/#0" target="_blank">Java version of this codelab</a>, you can go <a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app/#0" target="_blank">here</a>.) <a href="https://kotlinlang.org/" target="_blank">Kotlin</a> is a statically typed programming language that runs on the <a href="https://en.wikipedia.org/wiki/Java_virtual_machine" target="_blank">JVM</a> and is completely interoperable with the Java programming language. Kotlin is an officially supported language for developing Android apps, along with Java.</p>
+<h2 is-upgraded=""><strong>What you must know already</strong></h2>
+<p>This codelab is written for programmers and assumes that you know either the Java or Kotlin programming language. If you are an experienced programmer and adept at reading code, you will likely be able to follow this codelab, even if you don't have much experience with Kotlin.</p>
+<h2 class="checklist" is-upgraded=""><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>How to use Android Studio to build your app.</li>
+<li>How to run your app on a device or in the emulator.</li>
+<li>How to add interactive buttons.</li>
+<li>How to display a second screen when a button is pressed. </li>
+</ul>
+<h2 is-upgraded=""><strong>Use Android Studio and Kotlin to write Android apps</strong></h2>
+<p>You write Android apps in Kotlin or in the Java programming language using an IDE called Android Studio. Based on JetBrains' IntelliJ IDEA software, Android Studio is an IDE designed specifically for Android development.</p>
+<aside class="special"><h3 is-upgraded=""><strong>Note: This version of the codelab requires Android Studio 3.6 or higher.</strong></h3>
+</aside>
+<p>To work through this codelab, you will need a computer that can run <a href="https://developer.android.com/studio/preview/" target="_blank">Android Studio 3.6</a> or higher (or already has Android Studio 3.6 or higher installed).</p>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Install Android Studio" duration="0" step="2" style="transform: translate3d(-110%, 0px, 0px);"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">2. Install Android Studio</h2>
+        <aside class="special"><h3 is-upgraded=""><strong>Note: This version of the codelab requires Android Studio 3.6 or higher.</strong></h3>
+</aside>
+<p>You can download Android Studio 3.6 from the <a href="https://developer.android.com/studio/preview" target="_blank">Android Studio Preview</a> page.</p>
+<p>Android Studio provides a complete IDE, including an advanced code editor and app templates. It also contains tools for development, debugging, testing, and performance that make it faster and easier to develop apps. You can use Android Studio to test your apps with a large range of preconfigured emulators, or on your own mobile device. You can also build production apps and publish apps on the Google Play store.</p>
+<aside class="special"><p><strong>Note:</strong> Android Studio is continually being improved. For the latest information on system requirements and installation instructions, see the <a href="https://developer.android.com/studio" target="_blank">Android Studio download page</a>.</p>
+</aside>
+<p>Android Studio is available for computers running Windows or Linux, and for Macs running macOS. The newest OpenJDK (Java Development Kit) is bundled with Android Studio.</p>
+<p>The installation is similar for all platforms. Any differences are noted below.</p>
+<ol type="1" start="1">
+<li>Navigate to the <a href="https://developer.android.com/studio/" target="_blank">Android Studio download page</a> and follow the instructions to download and <a href="https://developer.android.com/studio/install.html" target="_blank">install Android Studio</a>.</li>
+<li>Accept the default configurations for all steps, and ensure that all components are selected for installation.</li>
+<li>After the install is complete, the setup wizard downloads and installs additional components, including the Android SDK. Be patient, because this process might take some time, depending on your internet speed.</li>
+<li>When the installation completes, Android Studio starts, and you are ready to create your first project.</li>
+</ol>
+<aside class="warning"><p><strong>Troubleshooting:</strong> If you run into problems with your installation, see the Android Studio release notes or Troubleshoot Android Studio.</p>
+</aside>
+
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Task: Create your first project" duration="0" step="3" style="transform: translate3d(-110%, 0px, 0px);"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">3. Task: Create your first project</h2>
+        <p>In this step,  you will create a new Android project for your first app.  This simple app displays the string "Hello World" on the screen of an Android virtual or physical device.  </p>
+<p>Here's what the finished app will look like:</p>
+<p class="image-container"><img style="width: 251.50px" src="./3rd color_files/72c7e6d2960f4faa.png"></p>
+<h2 class="checklist" is-upgraded=""><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>How to create a project in Android Studio.</li>
+<li>How to create an emulated Android device.</li>
+<li>How to run your app on the emulator.</li>
+<li>How to run your app on your own physical device, if you have one.</li>
+</ul>
+<h2 is-upgraded=""><strong>Step 1: Create a new project</strong></h2>
+<ol type="1" start="1">
+<li>Open Android Studio.</li>
+<li>In the <strong>Welcome to Android Studio</strong> dialog, click <strong>Start a new Android Studio project</strong>.<br><img style="width: 433.50px" src="./3rd color_files/190e0ce53fdf06d5.png"></li>
+<li>Select <strong>Basic Activity</strong> (not the default). Click <strong>Next</strong>.<img style="width: 436.50px" src="./3rd color_files/4affdbcd0598f0ef.png"></li>
+<li>Give your application a name such as <strong>My First App</strong>.</li>
+<li>Make sure the <strong>Language</strong> is set to <strong>Kotlin</strong>.</li>
+<li>Leave the defaults for the other fields.</li>
+<li>Click <strong>Finish</strong>. </li>
+</ol>
+<p><br>After these steps, Android Studio: </p>
+<ul>
+<li>Creates a folder for your Android Studio project. This is usually in a folder called <strong>AndroidStudioProjects</strong> below your home directory.</li>
+<li>Builds your project (this may take a few moments). Android Studio uses <a href="https://gradle.org/" target="_blank">Gradle</a> as its build system. You can follow the build progress at the bottom of the Android Studio window.</li>
+<li>Opens the code editor showing your project.</li>
+</ul>
+<h2 is-upgraded=""><strong>Step 2: Get your screen set up</strong></h2>
+<p>When your project first opens in Android Studio, there may be a lot of windows and panes open. To make it easier to get to know Android Studio, here are some suggestions on how to customize the layout.</p>
+<ol type="1" start="1">
+<li>If there's a <strong>Gradle</strong> window open on the right side, click on the minimize button (<strong>—)</strong> in the upper right corner to hide it.<br><img style="width: 553.50px" src="./3rd color_files/97a3da610c1eede7.png"></li>
+<li>Depending on the size of your screen, consider resizing the pane on the left showing the project folders to take up less space.<br></li>
+</ol>
+<p>At this point, your screen should look a bit less cluttered, similar to the screenshot shown below.</p>
+<p class="image-container"><img style="width: 624.00px" src="./3rd color_files/70183da1f878e11a.png"></p>
+<h2 is-upgraded=""><strong>Step 3: Explore the project structure and layout</strong></h2>
+<p>The upper left of the Android Studio window should look similar to the following diagram:<br><img style="width: 624.00px" src="./3rd color_files/2af83533f700673.png"></p>
+<p>Based on you selecting the <strong>Basic Activity</strong> template for your project, Android Studio has set up a number of files for you. You can look at the hierarchy of the files for your app in multiple ways, one is in <strong>Project</strong> view. <strong>Project</strong> view shows your files and folders structured in a way that is convenient for working with an Android project. (This does not always match the file hierarchy! To see the file hierarchy, choose the <strong>Project files</strong> view by clicking <strong>(3)</strong>.)</p>
+<ol type="1" start="1">
+<li>Double-click the <strong>app (1)</strong> folder to expand the hierarchy of app files. (See (<strong>1)</strong> in the screenshot.) </li>
+<li>If you click <strong>Project (2)</strong>, you can hide or show the <strong>Project</strong> view. You might need to select <strong>View &gt; Tool Windows</strong> to see this option.</li>
+<li>The current <strong>Project</strong> view selection is <strong>Project &gt; Android</strong>.</li>
+</ol>
+<p>In the <strong>Project &gt; Android</strong> view you see three or four top-level folders below your <strong>app</strong> folder: <strong>manifests</strong>, <strong>java</strong>, <strong>java (generated)</strong> and <strong>res</strong>. You may not see <strong>java (generated)</strong> right away.</p>
+<ol type="1" start="1">
+<li>Expand the <strong>manifests</strong> folder. <br><br>This folder contains <code>AndroidManifest.xml</code><strong>.</strong> This file describes all the components of your Android app and is read by the Android runtime system when your app is executed. </li>
+<li>Expand the <strong>java</strong> folder. All your Kotlin language files are organized here; it's called <strong>java</strong> because Kotlin uses the Java programming language and JVM. The <strong>java</strong> folder contains three subfolders:<br><br><strong>com.example.myfirstapp</strong> (or the domain name you have specified)<strong>:</strong> This folder contains the Kotlin source code files for your app. <br><br><strong>com.example.myfirstapp (androidTest):</strong> This folder is where you would put your instrumented tests, which are tests that run on an Android device. It starts out with a skeleton test file. <br><br><strong>com.example.myfirstapp (test):</strong> This folder is where you would put your unit tests. Unit tests don't need an Android device to run. It starts out with a skeleton unit test file.</li>
+<li>Expand the <strong>res</strong> folder. This folder contains all the resources for your app, including images, layout files, strings, icons, and styling. It includes these subfolders:<br><br><strong>drawable</strong>: All your app's images will be stored in this folder.<br><br><strong>layout</strong>: This folder contains the UI layout files for your activities. Currently, your app has one activity that has a layout file called <code>activity_main.xml</code>. It also contains <code>content_main.xml</code>, <code>fragment_first.xml</code>, and <code>fragment_second.xml</code>.<br><br><strong>menu:</strong> This folder contains XML files describing any menus in your app.<br><br><strong>mipmap</strong>: This folder contains the launcher icons for your app.<br><br><strong>navigation:</strong> This folder contains the navigation graph, which tells Android Studio how to navigate between different parts of your application.<br><br><strong>values</strong>: Contains resources, such as strings and colors, used in your app.</li>
+</ol>
+<h2 is-upgraded=""><strong>Step 4: Create a virtual device (emulator)</strong></h2>
+<p>In this task, you will use the <a href="http://developer.android.com/tools/devices/managing-avds.html" target="_blank">Android Virtual Device (AVD) manager</a> to create a virtual device (or emulator) that simulates the configuration for a particular type of Android device. </p>
+<p>The first step is to create a configuration that describes the virtual device. </p>
+<ol type="1" start="1">
+<li>In Android Studio, select <strong>Tools</strong> &gt; <strong>AVD Manager</strong>, or click the AVD Manager icon in the toolbar. <img style="width: 48.00px" src="./3rd color_files/e3c8802eed45e847.png"></li>
+<li>Click <strong>+Create Virtual Device</strong>. (If you have created a virtual device before, the window shows all of your existing devices and the <strong>+Create Virtual Device </strong>button is at the bottom.) The <strong>Select Hardware</strong> window shows a list of pre-configured hardware device definitions.</li>
+<li>Choose a device definition, such as <strong>Pixel 2</strong>, and click <strong>Next</strong>. (For this codelab, it really doesn't matter which device definition you pick).</li>
+<li>In the <strong>System Image</strong> dialog, from the <strong>Recommended</strong> tab, choose the latest release. (This does matter.)</li>
+<li>If a <strong>Download</strong> link is visible next to a latest release, it is not installed yet, and you need to download it first. If necessary, click the link to start the download, and click <strong>Next</strong> when it's done.</li>
+</ol>
+<aside class="special"><p><strong>Note:</strong> System images can take up a large amount of disk space, so just download what you need.</p>
+</aside>
+<ol type="1" start="6">
+<li>In the next dialog box, accept the defaults, and click <strong>Finish</strong>.</li>
+</ol>
+<p>The AVD Manager now shows the virtual device you added.</p>
+<ol type="1" start="7">
+<li>If the <strong>Your Virtual Devices</strong> AVD Manager window is still open, go ahead and close it.</li>
+</ol>
+<h2 is-upgraded="">Step 5: Run your app on your new emulator</h2>
+<ol type="1" start="1">
+<li>In Android Studio, select <strong>Run &gt; Run 'app'</strong> or click the <strong>Run </strong>icon in the toolbar.  <img style="width: 24.00px" src="./3rd color_files/6c65750f2ce7f651.png"> The icon will change when your app is already running. <img style="width: 25.80px" src="./3rd color_files/edee73c1aed2b57e.png"><br></li>
+</ol>
+<aside class="special"><p>If you get a dialog box stating "Instant Run requires that the platform corresponding to your target device (Android N...) is installed" go ahead and click <strong>Install and continue.</strong></p>
+</aside>
+<ol type="1" start="2">
+<li>In <strong>Run &gt; Select Device</strong>, under <strong>Available devices</strong>, select the virtual device that you just configured. This menu also appears in the toolbar.</li>
+</ol>
+<p class="image-container"><img style="width: 256.00px" src="./3rd color_files/8c1207ec3e22d73b.png"></p>
+<p>The emulator starts and boots just like a physical device. Depending on the speed of your computer, this may take a while. You can look in the small horizontal status bar at the very bottom of Android Studio for messages to see the progress. </p>
+<table>
+<tbody><tr><td colspan="2" rowspan="1"><p><strong>Messages that might appear briefly in the status bar</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Gradle build running</em></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 157.00px" src="./3rd color_files/439e1f19484e465d.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Waiting for target device to come on line</em></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 243.00px" src="./3rd color_files/7a730bfe8bed89a3.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Installing APK</em></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 132.00px" src="./3rd color_files/410e6d36f053ac2a.png"></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>Launching activity</em></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 148.00px" src="./3rd color_files/da65b2c9371666d0.png"></p>
+</td></tr>
+</tbody></table>
+<p>Once your app builds and the emulator is ready, Android Studio uploads the app to the emulator and runs it. You should see your app as shown in the following screenshot. </p>
+<p class="image-container"><img style="width: 257.50px" src="./3rd color_files/89960f5a856e1aa7.png"></p>
+<aside class="special"><p><strong>Note</strong>: It is a good practice to start the emulator at the beginning of your session. Don't close the emulator until you are done testing your app, so that you don't have to wait for the emulator to boot again. Also, don't have more than one emulator running at once, to reduce memory usage.</p>
+</aside>
+<h2 is-upgraded="">Step 6: Run your app on a device (if you have one)</h2>
+<p>What you need: </p>
+<ul>
+<li>An Android device such as a phone or tablet. </li>
+<li>A data cable to connect your Android device to your computer via the USB port. </li>
+<li>If you are using a Linux or Windows OS, you may need to perform additional steps to run your app on a hardware device. Check the <a href="http://developer.android.com/tools/device.html" target="_blank">Run Apps on a Hardware Device</a> documentation. On Windows, you may need to install the appropriate USB driver for your device. See <a href="http://developer.android.com/tools/extras/oem-usb.html" target="_blank">OEM USB Drivers</a>. </li>
+</ul>
+<h3 is-upgraded=""><strong>Run your app on a device</strong></h3>
+<p>To let Android Studio communicate with your device, you must turn on USB Debugging on your Android device.  </p>
+<p>On Android 4.2 and higher, the Developer options screen is hidden by default.  To show Developer options and enable USB Debugging: </p>
+<ol type="1" start="1">
+<li>On your device, open <strong>Settings &gt; About phone</strong> and tap <strong>Build number</strong> seven times.</li>
+<li>Return to the previous screen (<strong>Settings</strong>).  <strong>Developer options</strong> appears at the bottom of the list.  Tap <strong>Developer options</strong>.</li>
+<li>Enable <strong>USB Debugging</strong>. </li>
+</ol>
+<p>Now you can connect your device and run the app from Android Studio. </p>
+<ol type="1" start="1">
+<li>Connect  your device to your development machine with a USB cable. On the device, you might need to agree to allow USB debugging from your development device.</li>
+<li>In Android Studio, click <strong>Run </strong><img style="width: 23.50px" src="./3rd color_files/6c65750f2ce7f651.png"> in the toolbar at the top of the window. (You  might need to select <strong>View &gt; Toolbar</strong> to see this option.) The <strong>Select Deployment Target</strong> dialog opens with the list of available emulators and connected devices. </li>
+<li>Select your device, and click <strong>OK</strong>. Android Studio installs the app on your device and runs it.<br></li>
+</ol>
+<aside class="special"><p><strong>Note</strong>: If your device is running an Android platform that isn't installed in Android Studio, you might see a message asking if you want to install the needed platform. Click <strong>Install and Continue</strong>, then click <strong>Finish</strong> when the process is complete.</p>
+</aside>
+<h2 is-upgraded=""><strong>Troubleshooting</strong></h2>
+<p>If you're stuck, quit Android Studio and restart it.</p>
+<p>If Android Studio does not recognize your device, try the following:</p>
+<ol type="1" start="1">
+<li>Disconnect your device from your development machine and reconnect it.</li>
+<li>Restart Android Studio.</li>
+</ol>
+<p>If your computer still does not find the device or declares it "unauthorized":</p>
+<ol type="1" start="1">
+<li>Disconnect the device.</li>
+<li>On the device, open <strong>Settings-&gt;Developer Options</strong>. </li>
+<li>Tap <strong>Revoke USB Debugging authorizations</strong>.</li>
+<li>Reconnect the device to your computer. </li>
+<li>When prompted, grant authorizations. </li>
+</ol>
+<p>If you are still having trouble, check that you installed the appropriate USB driver for your device. See the <a href="http://developer.android.com/tools/device.html" target="_blank">Using Hardware Devices documentation</a>.</p>
+<p>Check the <a href="https://developer.android.com/studio/troubleshoot" target="_blank">troubleshooting section in the Android Studio documentation</a>.</p>
+<h2 is-upgraded=""><strong>Step 7: Explore the app template</strong></h2>
+<p>When you created the project and selected <strong>Basic Activity</strong>, Android Studio set up a number of files, folders, and also user interface elements for you, so you can start out with a working app and major components in place.  This makes it easier to build your application.</p>
+<p>Looking at your app on the emulator or your device, in addition to the <strong>Next</strong> button, notice the <a href="https://developer.android.com/guide/topics/ui/floating-action-button" target="_blank"><em>floating action button</em></a> with an email icon.<img style="width: 37.14px" src="./3rd color_files/fcd654ba6230d62b.png"> If you tap that button, you'll see it has been set up to briefly show a message at the bottom of the screen. This message space is called a <a href="https://developer.android.com/reference/android/support/design/widget/Snackbar" target="_blank"><em>snackbar</em></a>, and it's one of several ways to notify users of your app with brief information.</p>
+<p class="image-container"><img style="width: 289.89px" src="./3rd color_files/a81977f81aa6f230.png"></p>
+<p>At the top right of the screen, there's a menu with 3 vertical dots. <img style="width: 24.67px" src="./3rd color_files/954c525eb297c48e.png"> If you tap on that, you'll see that Android Studio has also created an options menu with a <strong>Settings</strong> item. Choosing <strong>Settings</strong> doesn't do anything yet, but having it set up for you makes it easier to add user-configurable settings to your app.<br><img style="width: 289.50px" src="./3rd color_files/aca05d964afc783c.png"></p>
+<p>Later in this codelab, you'll  look at the <strong>Next</strong> button and modify the way it looks and what it does.</p>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Task: Explore the layout editor" duration="0" step="4" style="transform: translate3d(-110%, 0px, 0px);"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">4. Task: Explore the layout editor</h2>
+        <p>Generally, each screen in your Android app is associated with one or more <a href="https://developer.android.com/guide/components/fragments" target="_blank"><em>fragments</em></a>. The single screen displaying "Hello First Fragment" is created by one fragment, called <code>FirstFragment</code>. This was generated for you when you created your new project. Each visible fragment in an Android app has a layout that defines the user interface for the fragment. Android Studio has a layout editor where you can create and define layouts.</p>
+<p>Layouts are defined in <a href="https://en.wikipedia.org/wiki/XML" target="_blank">XML</a>. The layout editor lets you define and modify your layout either by coding XML or by using the interactive visual editor.</p>
+<p>Every element in a layout is a view. In this task, you will explore some of the panels in the layout editor, and you will learn how to change property of views.</p>
+<h2 class="checklist" is-upgraded=""><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>How to use the layout editor.</li>
+<li>How to set property values.</li>
+<li>How to add string resources.</li>
+<li>How to add color resources.</li>
+</ul>
+<h2 is-upgraded=""><strong>Step 1: Open the layout editor</strong></h2>
+<ol type="1" start="1">
+<li>Find and open the <strong>layout</strong> folder (<strong>app &gt; res &gt; layout</strong>) on the left side.<br><img style="width: 271.00px" src="./3rd color_files/bb7b4fe5af80859d.png"><br></li>
+<li>Double-click <code>fragment_first.xml</code>.</li>
+</ol>
+<aside class="warning"><p><strong>Troubleshooting:</strong> If you don't see the file <code>fragment_first.xml</code>, confirm you are running Android Studio 3.6 or later, which is required for this codelab.</p>
+</aside>
+<p>The panels to the right of the Project view comprise the <em>Layout Editor</em>. They may be arranged differently in your version of Android Studio, but the function is the same.<br><img style="width: 624.00px" src="./3rd color_files/356e0f1c3bbc6e40.png"><br><br>On the left is a <strong>Palette</strong> of views you can add to your app. <br><br>Below that is a <strong>Component Tree</strong> showing the views currently in this file, and how they are arranged in relation to each other.<br><br>In the center is the <em>Design editor,</em> which shows a visual representation of what the contents of the file will look like when compiled into an Android app. You can view the visual representation, the XML code, or both.<br></p>
+<ol type="1" start="3">
+<li>In the upper right corner of the Design editor, above <strong>Attributes</strong>, find the three icons that look like this:<br><img style="width: 311.00px" src="./3rd color_files/c3bf10188fa03e63.png"><br>These represent <strong>Code</strong> (code only), <strong>Split</strong> (code + design), and <strong>Design</strong> (design only) views.<br></li>
+<li>Try selecting the different modes. Depending on your screen size and work style, you may prefer switching between <strong>Code</strong> and <strong>Design</strong>, or staying in <strong>Split</strong> view. If your <strong>Component Tree</strong> disappears, hide and show the <strong>Palette</strong>.<br><br><strong>Split</strong> view:<br><img style="width: 624.00px" src="./3rd color_files/32d3075ed7f5c02c.png"><br></li>
+<li>At the lower right of the Design editor you see <strong>+</strong> and <strong>-</strong> buttons for zooming in and out. Use these buttons to adjust the size of what you see, or click the zoom-to-fit button so that both panels fit on your screen.</li>
+</ol>
+<p class="image-container"><img style="width: 47.00px" src="./3rd color_files/f70743225eeff4d5.png"></p>
+<p>The <em>Design layout</em> on the left shows how your app appears on the device. The <em>Blueprint layout</em>, shown on the right, is a schematic view of the layout.</p>
+<ol type="1" start="6">
+<li>Practice using  the layout menu in the top left of the design toolbar to display the design view, the blueprint view, and both views side by side.<br><img style="width: 211.80px" src="./3rd color_files/affc3849b79ef00b.png"></li>
+</ol>
+<p>Depending on the size of your screen and your preference, you may wish to only show the <strong>Design</strong> view or the <strong>Blueprint</strong> view, instead of both.</p>
+<ol type="1" start="7">
+<li>Use the orientation icon to change the orientation of the layout. This allows you to test how your layout will fit portrait and landscape modes.<br><img style="width: 271.11px" src="./3rd color_files/ca3b967a4b5e5f48.png"><br></li>
+<li>Use the device menu to view the layout on different devices. (This is extremely useful for testing!)<br><br><img style="width: 426.20px" src="./3rd color_files/d312813ddc5c694c.png"></li>
+</ol>
+<p>On the right is the <strong>Attributes</strong> panel. You'll learn about that later.</p>
+<h2 is-upgraded=""><strong>Step 2: Explore and resize the Component Tree</strong></h2>
+<ol type="1" start="1">
+<li>In <code>fragment_first.xml</code>, look at the <strong>Component Tree</strong>. If it's not showing, switch the mode to <strong>Design</strong> instead of <strong>Split</strong> or <strong>Code</strong>.<br><br><img style="width: 317.00px" src="./3rd color_files/d18b06ccaae82e66.png"><br><br>This panel shows the <em>view hierarchy</em> in your layout, that is, how the views are arranged in relation to each other.</li>
+<li>If necessary, resize the <strong>Component Tree</strong> so you can read at least part of the strings.</li>
+<li>Click the <strong>Hide</strong> icon at the top right of the <strong>Component Tree</strong>. <img style="width: 42.93px" src="./3rd color_files/6e874d10ebf13579.png"><br><br>The <strong>Component Tree</strong> closes.</li>
+<li>Bring back the <strong>Component Tree</strong> by clicking the vertical label <strong>Component Tree</strong> on the left.<br><br><img style="width: 115.00px" src="./3rd color_files/522242d0d4be1108.png"><br><br></li>
+</ol>
+<h2 is-upgraded=""><strong>Step 3: Explore view hierarchies</strong></h2>
+<ol type="1" start="1">
+<li>In the <strong>Component Tree</strong>, notice that the root of the view hierarchy is a <code>ConstraintLayout</code> view. <br><br>Every layout must have a root view that contains all the other views. The root view is always a <em>view group</em>, which is a view that contains other views. A <code>ConstraintLayout</code> is one example of a view group.</li>
+<li>Notice that the <code>ConstraintLayout</code> contains a <code>TextView</code>, called <code>textview_first</code> and a <code>Button</code>, called <code>button_first</code>.<br><br><img style="width: 316.00px" src="./3rd color_files/69291e39e79581b7.png"><br></li>
+<li>If the code isn't showing, switch to <strong>Code</strong> or <strong>Split</strong> view using the icons in the upper right corner.</li>
+<li>In the XML code, notice that the root element is <code>&lt;androidx.constraintlayout.widget.ConstraintLayout&gt;</code>. The root element contains a <code>&lt;TextView&gt;</code> element and a <code>&lt;Button&gt;</code> element.<br></li>
+</ol>
+<pre><code><span class="tag">&lt;androidx.constraintlayout.widget.ConstraintLayout</span><span class="pln">
+  ... </span><span class="tag">&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;TextView</span><span class="pln">
+      ...  </span><span class="tag">/&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;Button</span><span class="pln">
+      ...  </span><span class="tag">/&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span></code></pre>
+<h2 is-upgraded=""><strong>Step 4: Change property values</strong></h2>
+<ol type="1" start="1">
+<li>In the code editor, examine the properties in the <code>TextView</code> element.<br></li>
+</ol>
+<pre><code><span class="tag">&lt;TextView</span><span class="pln">
+   </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+   </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+   </span><span class="atn">android:text</span><span class="pun">=</span><span class="atv">"Hello first fragment"</span><span class="pln">
+   ... </span><span class="tag">/&gt;</span></code></pre>
+<ol type="1" start="2">
+<li>Click on the string in the <strong>text</strong> property, and you'll notice it refers to a string resource, <code>hello_first_fragment</code>.</li>
+</ol>
+<pre><code><span class="pln">android</span><span class="pun">:</span><span class="pln">text</span><span class="pun">=</span><span class="str">"@string/hello_first_fragment"</span></code></pre>
+<ol type="1" start="3">
+<li>RIght-click on the property and click <strong>Go To &gt; Declaration or Usages</strong></li>
+</ol>
+<p><code>values/strings.xml</code> opens with the string highlighted.</p>
+<pre><code><span class="tag">&lt;string</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"hello_first_fragment"</span><span class="tag">&gt;</span><span class="pln">Hello first fragment</span><span class="tag">&lt;/string&gt;</span></code></pre>
+<ol type="1" start="4">
+<li>Change the value of the <code>string</code><strong> </strong>property to <code>Hello World!</code>. </li>
+<li>Switch back to <code>fragment_first.xml</code>.</li>
+<li> Select <code>textview_first</code> in the <strong>Component Tree</strong>.<br><img style="width: 317.00px" src="./3rd color_files/5a0dc2b2c82986e8.png"><br></li>
+</ol>
+<ol type="1" start="8">
+<li>Look at the <strong>Attributes</strong> panel on the right, and open the <strong>Declared Attributes</strong> section if needed.<br><img style="width: 299.00px" src="./3rd color_files/8d4f36e588daa96a.png"><br><br></li>
+</ol>
+<aside class="special"><p><strong>Troubleshooting this step</strong>: </p>
+<ul>
+<li>If the <strong>Attributes</strong> panel is not visible, click the vertical <strong>Attributes</strong> label at the top right.<br> <img style="width: 61.26px" src="./3rd color_files/9ea3f660f056e80d.png"></li>
+</ul>
+</aside>
+<ol type="1" start="9">
+<li>In the <strong>text</strong> field of the <code>TextView</code> in <strong>Attributes</strong>, notice it still refers to the string resource <code>@string/hello_first_fragment</code>. Having the strings in a resource file has several advantages. You can change the value of string without having to change any other code. This simplifies translating your app to other languages, because your translators don't have to know anything about the app code.<br><img style="width: 624.00px" src="./3rd color_files/d16752fabd6c4ee9.png"><br></li>
+</ol>
+<aside class="special"><p><strong>Note:</strong> To find a property in the list of all the properties, click on the magnifying glass icon to the right of <strong>Attributes</strong>, and begin typing the name of the property. Android Studio will show just the properties that contain that string.</p>
+<p class="image-container"><img style="width: 323.90px" src="./3rd color_files/af4afd7f7fb90316.png"></p>
+<p class="image-container"><img style="width: 326.39px" src="./3rd color_files/fc6696f6054a85f9.png"></p>
+</aside>
+<ol type="1" start="10">
+<li>Run the app to see the change you made in <strong>strings.xml</strong>. Your app now shows "Hello World!".<br><br><img style="width: 238.50px" src="./3rd color_files/d2103406630c3527.png"><br><br></li>
+</ol>
+<h2 is-upgraded=""><strong>Step 5: Change text display properties</strong></h2>
+<ol type="1" start="1">
+<li>With <code>textview_first</code> still selected in the <strong>Component Tree</strong>, in the layout editor, in the list of attributes, under <strong>Common Attributes</strong>, expand the <strong>textAppearance</strong> field. (You may need to scroll down to find it.)<br><br><img style="width: 342.00px" src="./3rd color_files/cda34e80a9c2b2ee.png"><br><br></li>
+<li>Change some of the text appearance properties. For example, change the font family, increase the text size, and select bold style. (You might need to scroll the panel to see all the fields.)</li>
+<li>Change the text color. Click in the <strong>textColor</strong> field, and enter <code>g</code>.<br><br>A menu pops up with possible completion values containing the letter g. This list includes predefined colors.<br><br><img style="width: 421.00px" src="./3rd color_files/65545210db74d24b.png"><br><br></li>
+<li>Select <strong>@android:color/darker_gray</strong> and press <strong>Enter</strong>.<br><br>Below is an example of the <strong>textAppearance</strong> attributes after making some changes.<br><br><img style="width: 298.98px" src="./3rd color_files/f980c30004403596.png"><br><br></li>
+<li>Look at the XML for the <code>TextView</code>. You see that the new properties have been added.</li>
+</ol>
+<pre><code><span class="pln">&lt;TextView
+   android:id="@+id/textview_first"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:fontFamily="sans-serif-condensed"
+   android:text="@string/hello_first_fragment"
+   android:textColor="@android:color/darker_gray"
+   android:textSize="30sp"
+   android:textStyle="bold"</span></code></pre>
+<ol type="1" start="6">
+<li>Run your app again and see the changes applied to your Hello World! string<br><br><img style="width: 238.70px" src="./3rd color_files/c715d9230068d0f8.png"><br><br><br></li>
+</ol>
+<h2 is-upgraded=""><strong>Step 6: Display all attributes</strong></h2>
+<ol type="1" start="1">
+<li>In the <strong>Attributes</strong> panel, scroll down until you find <strong>All Attributes</strong>.</li>
+</ol>
+<aside class="special"><p>If you don't see any attributes in the <strong>Attributes</strong> panel, make sure <code>textview_first</code> is still selected in the <strong>Component Tree</strong>.</p>
+</aside>
+<p class="image-container"><img style="width: 355.00px" src="./3rd color_files/74e7f4cb18fe07a1.png"><br></p>
+<ol type="1" start="2">
+<li>Scroll through the list to get an idea of the attributes you could set for a <code>TextView</code>.</li>
+</ol>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Task: Add color resources" duration="0" step="5" style="transform: translate3d(0px, 0px, 0px);" selected=""><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">5. Task: Add color resources</h2>
+        <p>So far you have learned how to change property values. Next, you will learn how to create more resources like the string resources you worked with earlier. Using resources enables you to use the same values in multiple places, or to define values and have the UI update automatically whenever the value is changed. </p>
+<h2 class="checklist" is-upgraded=""><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>How resources are defined.</li>
+<li>Adding and using color resources.</li>
+<li>The results of changing layout height and width.</li>
+</ul>
+<h2 is-upgraded=""><strong>Step 1: Add color resources</strong></h2>
+<p>First, you'll learn how to add new color resources.</p>
+<p><strong>Change the text color and background of the TextView</strong></p>
+<ol type="1" start="1">
+<li>In the <strong>Project</strong> panel on the left, double-click on <strong>res</strong> &gt; <strong>values</strong> &gt; <strong>colors.xml</strong> to open the color resource file.<br><br><br><img style="width: 559.00px" src="./3rd color_files/1c2e479d616a30e0.png"><br></li>
+</ol>
+<pre><code><span class="tag">&lt;resources&gt;</span><span class="pln">
+    </span><span class="tag">&lt;color</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"colorPrimary"</span><span class="tag">&gt;</span><span class="pln">#6200EE</span><span class="tag">&lt;/color&gt;</span><span class="pln">
+    </span><span class="tag">&lt;color</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"colorPrimaryDark"</span><span class="tag">&gt;</span><span class="pln">#3700B3</span><span class="tag">&lt;/color&gt;</span><span class="pln">
+    </span><span class="tag">&lt;color</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"colorAccent"</span><span class="tag">&gt;</span><span class="pln">#03DAC5</span><span class="tag">&lt;/color&gt;</span><span class="pln">
+</span><span class="tag">&lt;/resources&gt;</span></code></pre>
+<p>The <code>colors.xml</code> file opens in the editor. So far, three colors have been defined. These are the colors you can see in you app layout, for example, purple for the app bar.<br></p>
+<ol type="1" start="2">
+<li>Go back to <code>fragment_first.xml</code> so you can see the XML code for the layout.</li>
+<li>Add a new property to the <code>TextView</code> called <code>android:background</code>, and start typing to set its value to <code>@color</code>. You can add this property anywhere inside the TextView code.<br><br>A menu pops up offering the predefined color resources:<br><br><img style="width: 444.00px" src="./3rd color_files/ae3b0a792800210d.png"><br><br></li>
+<li>Choose <strong>@color/colorPrimaryDark.</strong></li>
+<li>Change the property <code>android:textColor</code> and give it a value of <code>@android:color/white</code>. <br><br>The Android framework defines a range of colors, including white, so you don't have to define white yourself.</li>
+<li>In the layout editor, you can see that the <code>TextView</code> now has a dark blue background, and the text is displayed in white.<br><br><img style="width: 153.64px" src="./3rd color_files/ddb3542f5b3641f.png"><br></li>
+</ol>
+<h2 is-upgraded=""><strong>Step 2: Add a new color to use as the screen background color</strong><br></h2>
+<ol type="1" start="1">
+<li>Back in <code>colors.xml</code>, create a new color resource called <code>screenBackground</code>:</li>
+</ol>
+<pre><code><span class="tag">&lt;color</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"screenBackground"</span><span class="tag">&gt;</span><span class="pln">#FFEE58</span><span class="tag">&lt;/color&gt;</span></code></pre>
+<p><br>A <a href="https://developer.android.com/reference/android/graphics/Color" target="_blank">Color</a> can be defined as 3 hexadecimal numbers (#00-#FF, or 0-255) representing the red, blue, and green (RGB) components.  The color you just added is yellow. Notice that the colors corresponding to the code are displayed in the left margin of the editor. </p>
+<p class="image-container"><img style="width: 624.00px" src="./3rd color_files/d4f9c0fe23b5768c.png"></p>
+<p>Note that a color can also be defined including an alpha value (#00-#FF) which represents the transparency (#00 = 0% = fully transparent, #FF = 100% = fully opaque). When included, the alpha value is the first of 4 hexadecimal numbers (ARGB).</p>
+<p>The alpha value is a measure of transparency. For example, #88FFEE58 makes the color semi-transparent, and if you use #00FFEE58, it's fully transparent and disappears from the left-hand bar.</p>
+<ol type="1" start="2">
+<li>Go back to <code>fragment_first.xml</code>. </li>
+<li>In the <strong>Component Tree</strong>, select the <code>ConstraintLayout</code>.<br><img style="width: 317.00px" src="./3rd color_files/98c54173559bb461.png"><br></li>
+<li>In the <strong>Attributes</strong> panel, select the <strong>background</strong> property and press <strong>Enter</strong>. Type "c" in the field that appears.</li>
+<li>In the menu of colors that appears, select <strong>@color/screenBackground</strong>. Press <strong>Enter</strong> to complete the selection.<br><br><img style="width: 411.00px" src="./3rd color_files/b4e5c071dd3b5159.png"><br></li>
+<li>Click on the yellow patch to the left of the color value in the <strong>background</strong> field.<br><br><img style="width: 297.00px" src="./3rd color_files/856474f8abf6f10d.png"><br><br><br>It shows a list of colors defined in <code>colors.xml</code>. Click the <strong>Custom</strong> tab to choose a custom color with an interactive color chooser.<br><img style="width: 279.80px" src="./3rd color_files/104ce762d1946692.png"><br></li>
+<li>Feel free to change the value of the <strong>screenBackground</strong> color, but make sure that the final color is noticeably different from the <code>colorPrimary</code> and <code>colorPrimaryDark</code> colors.<br></li>
+</ol>
+<h2 is-upgraded=""><strong>Step 3: Explore width and height properties</strong></h2>
+<p>Now that you have a new screen background color, you will use it to explore the effects of changing the width and height properties of views.</p>
+<ol type="1" start="1">
+<li>In <code>fragment_first.xml</code>, in the <strong>Component Tree</strong>, select the <code>ConstraintLayout</code>.<br><br><img style="width: 317.00px" src="./3rd color_files/d2c4e3d995e9b871.png"><br><br></li>
+<li>In the <strong>Attributes</strong> panel, find and expand the <strong>Layout</strong> section.<br><img style="width: 287.00px" src="./3rd color_files/ca27efb4bee49656.png"><br><br>The <strong>layout_width</strong> and <strong>layout_height</strong> properties are both set to <strong>match_parent</strong>. The <code>ConstraintLayout</code> is the root view of this <code>Fragment</code>, so the "parent" layout size is effectively the size of your screen.</li>
+</ol>
+<aside class="special"><p><strong>Tip:</strong> All views must have <strong>layout_width</strong> and <strong>layout_height</strong> properties.</p>
+</aside>
+<ol type="1" start="3">
+<li>Notice that the entire background of the screen uses the <strong>screenBackground</strong> color.<br><br><img style="width: 215.71px" src="./3rd color_files/426c8f421a46991d.png"><br><br></li>
+<li>Select <code>textview_first</code>. Currently the layout width and height are <strong>wrap_content</strong>, which tells the view to be just big enough to enclose its content (plus padding)</li>
+<li>Change both the layout width and layout height to <strong>match_constraint</strong>, which tells the view to be as big as whatever it's constrained to.<br><br>The width and height show <strong>0dp</strong>, and the text moves to the upper left, while the <code>TextView</code> expands to match the <code>ConstraintLayout</code> except for the button. The button and the text view are at the same level in the view hierarchy inside the constraint layout, so they share space.<br><br><img style="width: 233.00px" src="./3rd color_files/dc9c6f51a511851e.png"><br></li>
+<li>Explore what happens if the width is <strong>match_constraint</strong> and the height is <strong>wrap_content</strong> and vice versa. You can also change the width and height of the button_first. </li>
+<li>Set both the width and height of the <code>TextView</code> and the <code>Button</code> back to <strong>wrap_content</strong>.</li>
+</ol>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Task: Add views and constraints" duration="0" step="6"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">6. Task: Add views and constraints</h2>
+        <p>In this task, you will add two more buttons to your user interface, and update the existing button, as shown below.</p>
+<p class="image-container"><img style="width: 226.55px" src="./3rd color_files/94e4cf7f4bb5264b.png"><br></p>
+<h2 class="checklist" is-upgraded=""><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>How to add new views to your layout.</li>
+<li>How to constrain the position of a view to another view.</li>
+</ul>
+<h2 is-upgraded=""><strong>Step 1: View constraint properties</strong></h2>
+<ol type="1" start="1">
+<li>In <code>fragment_first.xml</code>, look at the constraint properties for the <code>TextView</code>.</li>
+</ol>
+<pre><code><span class="pln">app</span><span class="pun">:</span><span class="pln">layout_constraintBottom_toTopOf</span><span class="pun">=</span><span class="str">"@id/button_first"</span><span class="pln">
+app</span><span class="pun">:</span><span class="pln">layout_constraintEnd_toEndOf</span><span class="pun">=</span><span class="str">"parent"</span><span class="pln">
+app</span><span class="pun">:</span><span class="pln">layout_constraintStart_toStartOf</span><span class="pun">=</span><span class="str">"parent"</span><span class="pln">
+app</span><span class="pun">:</span><span class="pln">layout_constraintTop_toTopOf</span><span class="pun">=</span><span class="str">"parent"</span></code></pre>
+<p>These properties define the position of the <code>TextView</code>. Read them carefully. <br><br>You can constrain the top, bottom, left, and right of a view to the top, bottom, left, and right of other views. </p>
+<ol type="1" start="2">
+<li>Select <code>textview_first</code> in the <strong>Component Tree</strong> and look at the <strong>Constraint Widget</strong> in the <strong>Attributes</strong> panel.<br><br><img style="width: 297.00px" src="./3rd color_files/b3cd940c5730149e.png"><br><br>The square represents the selected view. Each of the grey dots represents a constraint, to the top, bottom, left, and right; for this example, from the <code>TextView</code> to its parent, the <code>ConstraintLayout</code>, or to the <strong>Next</strong> button for the bottom constraint.<br></li>
+<li>Notice that the blueprint and design views also show the constraints when a particular view is selected. Some of the constraints are jagged lines, but the one to the <strong>Next</strong> button is a squiggle, because it's a little different. You'll learn more about that in a bit.<br><img style="width: 332.59px" src="./3rd color_files/721a4a2d0b148d2d.png"><br><br></li>
+</ol>
+<h2 is-upgraded=""><strong>Step 2: Add buttons and constrain their positions</strong></h2>
+<p>To learn how to use constraints to connect the positions of views to each other, you will add buttons to the layout. Your first goal is to add a button and some constraints, and change the constraints on the <strong>Next</strong> button.</p>
+<ol type="1" start="1">
+<li>Notice the <strong>Palette</strong> at the top left of the layout editor. Move the sides if you need to, so that you can see many of the items in the palette.<br><br><img style="width: 226.29px" src="./3rd color_files/c404c1539880fe40.png"></li>
+<li>Click on some of the categories, and scroll the listed items if needed to get an idea of what's available.</li>
+<li>Select <strong>Button</strong>, which is near the top, and drag and drop it onto the design view, placing it underneath the <code>TextView</code> near the other button.<br><br><img style="width: 247.57px" src="./3rd color_files/58c611c190a668ae.png"><br></li>
+</ol>
+<aside class="special"><p>Notice that a <code>Button</code> has been added to the <strong>Component Tree</strong> under <code>ConstraintLayout</code>.</p>
+</aside>
+<h2 is-upgraded=""><strong>Step 3: Add a constraint to the new button</strong></h2>
+<p>You will now constrain the top of the button to the bottom of the <code>TextView</code>.</p>
+<ol type="1" start="1">
+<li>Move the cursor over the circle at the top of the <code>Button</code>.<br><br><img style="width: 163.00px" src="./3rd color_files/b0a1469eb6dba7e.png"><br></li>
+<li>Click and drag the circle at the top of the <code>Button</code> onto the circle at the bottom of the <code>TextView</code>.<br><br><img style="width: 118.50px" src="./3rd color_files/f27ab2b57d64bb97.png"><br><br>The <code>Button</code> moves up to sit just below the <code>TextView</code> because top of the button is now <em>constrained</em> to the bottom of the <code>TextView</code>.<br><br><img style="width: 129.50px" src="./3rd color_files/3978438d933cc1f6.png"><br></li>
+</ol>
+<ol type="1" start="4">
+<li>Take a look at the <strong>Constraint Widget</strong> in the <strong>Layout</strong> pane of the <strong>Attributes</strong> panel. It shows some constraints for the <code>Button</code>, including <strong>Top -&gt; BottomOf textView</strong>.</li>
+<li>Take a look at the XML code for the button. It now includes the attribute that constrains the top of the button to the bottom of the <code>TextView</code>.<br></li>
+</ol>
+<pre><code><span class="pln">app</span><span class="pun">:</span><span class="pln">layout_constraintTop_toBottomOf</span><span class="pun">=</span><span class="str">"@+id/textview_first"</span></code></pre>
+<ol type="1" start="6">
+<li>You may see a warning, "<strong>Not Horizontally Constrained</strong>". To fix this, add a constraint from the left side of the button to the left side of the screen.</li>
+<li>Also add a constraint to constrain the bottom of the button to the bottom of the screen.</li>
+</ol>
+<p>Before adding another button, relabel this button so things are a little clearer about which button is which.</p>
+<ol type="1" start="1">
+<li>Click on the button you just added in the design layout.</li>
+<li>Look at the <strong>Attributes</strong> panel on the right, and notice the <strong>id</strong> field.</li>
+<li>Change the <strong>id</strong> from <code>button</code> to <code>toast_button</code>.</li>
+</ol>
+<h2 is-upgraded=""><strong>Step 4: Adjust the Next button</strong></h2>
+<p>You will adjust the button labeled <strong>Next</strong>, which Android Studio created for you when you created the project. The constraint between it and the <code>TextView</code> looks a little different, a wavy line instead of a jagged one, with no arrow. This indicates a <a href="https://developer.android.com/reference/android/support/constraint/ConstraintLayout#Chains" target="_blank"><em>chain</em></a>, where the constraints link two or more objects to each other, instead of just one to another. For now, you'll delete the chained constraints and replace them with regular constraints.</p>
+<h3 is-upgraded=""><strong>To delete a constraint:</strong><br></h3>
+<ul>
+<li>In the design view or blueprint view, hold the <code>Ctrl</code> key (<code>Command</code> on a Mac) and move the cursor over the circle for the constraint until the circle highlights, then click the circle.<br><img style="width: 186.55px" src="./3rd color_files/a70e3aa00c6cc0.png"></li>
+<li>Or click on one of the constrained views, then right-click on the constraint and select <strong>Delete</strong> from the menu.<br></li>
+<li>Or in the  <strong>Attributes</strong> panel, move the cursor over the circle for the constraint until it shows an x, then click it. <br><br><img style="width: 257.08px" src="./3rd color_files/9ce5751452851610.png"><br></li>
+</ul>
+<p>If you delete a constraint and want it back, either undo the action, or create a new constraint.</p>
+<h2 is-upgraded=""><strong>Step 5: Delete the chain constraints</strong></h2>
+<ol type="1" start="1">
+<li>Click on the <strong>Next</strong> button, and then delete the constraint from the top of the button to the <code>TextView</code>.</li>
+<li>Click on the <code>TextView</code>, and then delete the constraint from the bottom of the text to the <strong>Next</strong> button.</li>
+</ol>
+<h2 is-upgraded=""><strong>Step 6: Add new constraints</strong></h2>
+<ol type="1" start="1">
+<li>Constrain the right side of the <strong>Next</strong> button to the right of the screen if it isn't already.</li>
+<li>Delete the constraint on the left side of the <strong>Next</strong> button.</li>
+<li>Now constrain the top and bottom of the <strong>Next</strong> button so that the top of the button is constrained to the bottom of the <code>TextView</code> and  the bottom is constrained to the bottom of the screen. The right side of the button is constrained to the right side of the screen.</li>
+<li>Also constrain the <code>TextView</code> to the bottom of the screen.<br><br>It may seem like the views are jumping around a lot, but that's normal as you add and remove constraints.</li>
+</ol>
+<p>Your layout should now look something like this.<br><img style="width: 335.62px" src="./3rd color_files/2b5fc4cf8e32a9bf.png"><br></p>
+<h2 is-upgraded=""><strong>Step 7: Extract string resources</strong></h2>
+<ol type="1" start="1">
+<li>In the <code>fragment_first.xml</code> layout file, find the text property for the <strong><code>toast_button</code></strong> button.</li>
+</ol>
+<pre><code><span class="pln">&lt;Button
+   android:id="@+id/toast_button"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:text="Button"</span></code></pre>
+<ol type="1" start="2">
+<li>Notice that the text <code>"Button"</code> is directly in the layout field, instead of referencing a string resource as the <code>TextView</code> does. This will make it harder to translate your app to other languages.</li>
+<li>To fix this, click the highlighted code. A light bulb appears on the left.<br><br><img style="width: 429.00px" src="./3rd color_files/e46adb4e4590f7c0.png"><br></li>
+<li>Click the lightbulb. In the menu that pops up, select <strong>Extract string resource</strong>. <br><img style="width: 400.00px" src="./3rd color_files/b13c00b24529e22d.png"><br><br></li>
+<li>In the dialog box that appears, change the resource name to <code>toast_button_text</code> and the resource value to <code>Toast</code> and click <strong>OK</strong>.<br><br><img style="width: 291.00px" src="./3rd color_files/3f6a44f2e32cd390.png"><br></li>
+<li>Notice that the value of the <code>android:text</code> property has changed to <code>@string/toast_button_text</code>.</li>
+</ol>
+<pre><code><span class="pln">&lt;Button
+   android:id="@+id/button"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:text="@string/toast_button_text"</span></code></pre>
+<ol type="1" start="7">
+<li>Go to the <strong>res &gt; values &gt; strings.xml</strong> file. Notice that a new string resource has been added, named <code>toast_button_text</code><strong>.</strong></li>
+</ol>
+<pre><code><span class="tag">&lt;resources&gt;</span><span class="pln">
+   ... 
+   </span><span class="tag">&lt;string</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"toast_button_text"</span><span class="tag">&gt;</span><span class="pln">Toast</span><span class="tag">&lt;/string&gt;</span><span class="pln">
+</span><span class="tag">&lt;/resources&gt;</span></code></pre>
+<ol type="1" start="8">
+<li>Run the app to make sure it displays as you expect it to.<br><img style="width: 270.44px" src="./3rd color_files/73c7729f2d8329df.png"></li>
+</ol>
+<p>You now know how to create new string resources by extracting them from existing field values. (You can also add new resources to the <code>strings.xml</code> file manually.) And you know how to change the id of a view.</p>
+<aside class="special"><p><strong>Note</strong>: The <a href="https://developer.android.com/reference/android/view/View#ids" target="_blank">id</a> for a view helps you identify that view distinctly from other views. You'll use this later to find particular views using the <code>findViewById()</code> method in your Kotlin code.</p>
+</aside>
+<h2 is-upgraded=""><strong>Step 8: Update the Next button</strong></h2>
+<p>The <strong>Next</strong> button already has its text in a string resource, but you'll make some changes to the button to match its new role, which will be to generate and display a random number.</p>
+<ol type="1" start="1">
+<li>As you did for the <strong>Toast</strong> button, change the id of the <strong>Next</strong> button from <code>button_first</code> to <code>random_button</code> in the <strong>Attributes</strong> panel.</li>
+<li>If you get a dialog box asking to update all usages of the button, click <strong>Yes</strong>. This will fix any other references to the button in the project code.<br><img style="width: 448.00px" src="./3rd color_files/43d0a5d432ed218c.png"></li>
+<li>In <code>strings.xml</code>, right-click on the <code>next</code> string resource.</li>
+<li>Select <strong>Refactor &gt; Rename...</strong> and change the name to <code>random_button_text</code>.</li>
+<li>Click <strong>Refactor</strong> to rename your string and close the dialog.</li>
+<li>Change the value of the string from <code>Next</code> to <code>Random</code>.</li>
+<li>If you want, move <code>random_button_text</code> to below <code>toast_button_text</code>.</li>
+</ol>
+<h2 is-upgraded=""><strong>Step 9: Add a third button</strong></h2>
+<p>Your final layout will have three buttons, vertically constrained the same, and evenly spaced from each other.</p>
+<p class="image-container"><img style="width: 373.40px" src="./3rd color_files/ffadecba2b08f886.png"></p>
+<ol type="1" start="1">
+<li>In <code>fragment_first.xml</code>, add another button to the layout, and drop it somewhere between the <strong>Toast</strong> button and the <strong>Random</strong> button, below the <code>TextView</code>.</li>
+<li>Add vertical constraints the same as other other two buttons. Constrain the top of the third button to the bottom of <code>TextView</code>; constrain the bottom of the third button to the bottom of the screen.</li>
+<li>Add horizontal constraints from the third button to the other buttons. Constrain the left side of the third button to the right side of the <strong>Toast</strong> button; constrain the right side of the third button to the left side of the <strong>Random</strong> button.</li>
+</ol>
+<p>Your layout should look something like this:<br><br><img style="width: 256.50px" src="./3rd color_files/a3c8c1e8a4167ab6.png"></p>
+<ol type="1" start="5">
+<li>Examine the XML code for <code>fragment_first.xml</code>. Do any of the buttons have the attribute <code>app:layout_constraintVertical_bias</code>? It's OK if you do not see that constraint.<br><br>The "bias" constraints allows you to tweak the position of a view to be more on one side than the other when both sides are <a href="https://developer.android.com/reference/android/support/constraint/ConstraintLayout.html#CenteringPositioning" target="_blank">constrained in opposite directions</a>. For example, if both the top and bottom sides of a view are constrained to the top and bottom of the screen, you can use a vertical bias to place the view more towards the top than the bottom.</li>
+</ol>
+<p>Here is the XML code for the finished layout. Your layout might have different margins and perhaps some different vertical or horizontal bias constraints.The exact values of the attributes for the appearance of the <code>TextView</code> might be different for your app.</p>
+<pre><code><span class="pun">&lt;?</span><span class="pln">xml version</span><span class="pun">=</span><span class="str">"1.0"</span><span class="pln"> encoding</span><span class="pun">=</span><span class="str">"utf-8"</span><span class="pun">?&gt;</span><span class="pln">
+&lt;androidx.constraintlayout.widget.ConstraintLayout </span><span class="pun">&lt;?</span><span class="pln">xml version</span><span class="pun">=</span><span class="str">"1.0"</span><span class="pln"> encoding</span><span class="pun">=</span><span class="str">"utf-8"</span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;androidx.constraintlayout.widget.ConstraintLayout</span><span class="pln"> </span><span class="atn">xmlns:android</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/apk/res/android"</span><span class="pln">
+   </span><span class="atn">xmlns:app</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/apk/res-auto"</span><span class="pln">
+   </span><span class="atn">xmlns:tools</span><span class="pun">=</span><span class="atv">"http://schemas.android.com/tools"</span><span class="pln">
+   </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"match_parent"</span><span class="pln">
+   </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"match_parent"</span><span class="pln">
+   </span><span class="atn">android:background</span><span class="pun">=</span><span class="atv">"@color/screenBackground"</span><span class="pln">
+   </span><span class="atn">tools:context</span><span class="pun">=</span><span class="atv">".FirstFragment"</span><span class="tag">&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;TextView</span><span class="pln">
+       </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/textview_first"</span><span class="pln">
+       </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+       </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+       </span><span class="atn">android:background</span><span class="pun">=</span><span class="atv">"@color/colorPrimaryDark"</span><span class="pln">
+       </span><span class="atn">android:fontFamily</span><span class="pun">=</span><span class="atv">"sans-serif-condensed"</span><span class="pln">
+       </span><span class="atn">android:text</span><span class="pun">=</span><span class="atv">"@string/hello_first_fragment"</span><span class="pln">
+       </span><span class="atn">android:textColor</span><span class="pun">=</span><span class="atv">"@android:color/white"</span><span class="pln">
+       </span><span class="atn">android:textSize</span><span class="pun">=</span><span class="atv">"30sp"</span><span class="pln">
+       </span><span class="atn">android:textStyle</span><span class="pun">=</span><span class="atv">"bold"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintBottom_toBottomOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintEnd_toEndOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintStart_toStartOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintTop_toTopOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;Button</span><span class="pln">
+       </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/random_button"</span><span class="pln">
+       </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+       </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+       </span><span class="atn">android:text</span><span class="pun">=</span><span class="atv">"@string/random_button_text"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintBottom_toBottomOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintEnd_toEndOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintTop_toBottomOf</span><span class="pun">=</span><span class="atv">"@+id/textview_first"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;Button</span><span class="pln">
+       </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/toast_button"</span><span class="pln">
+       </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+       </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+       </span><span class="atn">android:text</span><span class="pun">=</span><span class="atv">"@string/toast_button_text"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintBottom_toBottomOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintStart_toStartOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintTop_toBottomOf</span><span class="pun">=</span><span class="atv">"@+id/textview_first"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+
+   </span><span class="tag">&lt;Button</span><span class="pln">
+       </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/button2"</span><span class="pln">
+       </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+       </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+       </span><span class="atn">android:text</span><span class="pun">=</span><span class="atv">"Button"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintBottom_toBottomOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintEnd_toStartOf</span><span class="pun">=</span><span class="atv">"@+id/random_button"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintStart_toEndOf</span><span class="pun">=</span><span class="atv">"@+id/toast_button"</span><span class="pln">
+       </span><span class="atn">app:layout_constraintTop_toBottomOf</span><span class="pun">=</span><span class="atv">"@+id/textview_first"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span></code></pre>
+<h2 is-upgraded=""><strong>Step 10: Get your UI ready for the next task</strong></h2>
+<p>The next task is to make the buttons do something when they are pressed. First, you need to get the UI ready.</p>
+<ol type="1" start="1">
+<li>Change the text of the <code>TextView</code> to show <strong>0</strong> (the number zero).</li>
+<li>Change the text alignment to center.</li>
+</ol>
+<p class="image-container"><img style="width: 610.00px" src="./3rd color_files/e5d278fc366feb31.png"></p>
+<ol type="1" start="3">
+<li>Change the <code>id</code> of the last button you added, <code>button2</code>, to <code>count_button</code> in the <strong>Attributes</strong> panel in the design editor.</li>
+<li>In the XML, extract the string resource to <code>count_button_text</code> and set the value to <code>Count.</code></li>
+<li><img style="width: 289.05px" src="./3rd color_files/370335aae894ba2.png"></li>
+</ol>
+<p>The buttons should now have the following text and ids:</p>
+<table>
+<tbody><tr><td colspan="1" rowspan="1"><p><strong>Button</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>text</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>id</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Left button</p>
+</td><td colspan="1" rowspan="1"><p>Toast</p>
+</td><td colspan="1" rowspan="1"><p>@+id/toast_button</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Middle button</p>
+</td><td colspan="1" rowspan="1"><p>Count</p>
+</td><td colspan="1" rowspan="1"><p>@+id/count_button</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Right button</p>
+</td><td colspan="1" rowspan="1"><p>Random</p>
+</td><td colspan="1" rowspan="1"><p>@+id/random_button</p>
+</td></tr>
+</tbody></table>
+<ol type="1" start="6">
+<li>Run the app.</li>
+</ol>
+<h2 is-upgraded=""><strong>Step 11: Fix errors if necessary</strong></h2>
+<aside class="warning"><p>If you edited the XML for the layout directly, you might see some errors.<br><br><img style="width: 469.40px" src="./3rd color_files/2e37087b1f3de24c.png"></p>
+<p>The errors occur because the buttons have changed their <code>id</code> and now these constraints are referencing non-existent views.</p>
+</aside>
+<p>If you have these errors, fix them by updating the <code>id</code> of the buttons in the constraints that are underlined in red.<br></p>
+<pre><code><span class="pln">app</span><span class="pun">:</span><span class="pln">layout_constraintEnd_toStartOf</span><span class="pun">=</span><span class="str">"@+id/random_button"</span><span class="pln">
+app</span><span class="pun">:</span><span class="pln">layout_constraintStart_toEndOf</span><span class="pun">=</span><span class="str">"@+id/toast_button"</span></code></pre>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Task: Update the appearance of the buttons and the TextView" duration="0" step="7"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">7. Task: Update the appearance of the buttons and the TextView</h2>
+        <p>Your app's layout is now basically complete, but its appearance can be improved with a few small changes.</p>
+<h2 is-upgraded=""><strong>Step 1: Add new color resources</strong></h2>
+<ol type="1" start="1">
+<li>In <code>colors.xml</code>, change the value of <code>screenBackground</code> to <code>#2196F3</code>, which is a blue shade in the <a href="https://material.io/guidelines/style/color.html#color-color-palette" target="_blank">Material Design palette</a>. </li>
+<li>Add a new color named <code>buttonBackground</code>. Use the value <code>#BBDEFB</code>, which is a lighter shade in the blue palette.<br></li>
+</ol>
+<pre><code><span class="tag">&lt;color</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"buttonBackground"</span><span class="tag">&gt;</span><span class="pln">#BBDEFB</span><span class="tag">&lt;/color&gt;</span></code></pre>
+<h2 is-upgraded=""><strong>Step 2: Add a background color for the buttons</strong></h2>
+<ol type="1" start="1">
+<li>In the layout, add a background color to each of the buttons. (You can either edit the XML in <code>fragment_first.xml</code> or use the <strong>Attributes</strong> panel, whichever you prefer.)<br></li>
+</ol>
+<pre><code><span class="pln">android</span><span class="pun">:</span><span class="pln">background</span><span class="pun">=</span><span class="str">"@color/buttonBackground"</span></code></pre>
+<h2 is-upgraded=""><strong>Step 3: Change the margins of the left and right buttons</strong></h2>
+<ol type="1" start="1">
+<li>Give the <strong>Toast</strong> button a left (start) margin of 24dp and give the <strong>Random</strong> button a right (end) margin of 24dp. (Using start and end instead of left and right makes these margins work for all language directions.)</li>
+<li>One way to do this is to use the <strong>Constraint Widget</strong> in the <strong>Attributes</strong> panel. The number on each side is the margin on that side of the selected view. Type <code>24</code> in the field and press <strong>Enter</strong>.<br><img style="width: 272.00px" src="./3rd color_files/99dab4fe070a972b.png"></li>
+</ol>
+<h2 is-upgraded=""><strong>Step 4: Update the appearance of the TextView</strong></h2>
+<ol type="1" start="1">
+<li>Remove the background color of the <code>TextView</code>, either by clearing the value in the <strong>Attributes</strong> panel or by removing the <code>android:background</code> attribute from the XML code. <br><br>When you remove the background, the view background becomes transparent.</li>
+<li>Increase the text size of the <code>TextView</code> to 72sp.<br></li>
+</ol>
+<pre><code><span class="pln">android</span><span class="pun">:</span><span class="pln">textSize</span><span class="pun">=</span><span class="str">"72sp"</span></code></pre>
+<ol type="1" start="3">
+<li>Change the font-family of the <code>TextView</code> to <code>sans-serif</code> (if it's not already).</li>
+<li>Add an <code>app:layout_constraintVertical_bias</code> property to the <code>TextView</code>, to bias the position of the view upwards a little so that it is more evenly spaced vertically in the screen. Feel free to adjust the value of this constraint as you like. (Check in the design view to see how the layout looks.)</li>
+</ol>
+<pre><code><span class="pln">app</span><span class="pun">:</span><span class="pln">layout_constraintVertical_bias</span><span class="pun">=</span><span class="str">"0.3"</span></code></pre>
+<ol type="1" start="5">
+<li>You can also set the vertical bias using the <strong>Constraint Widget</strong>. Click and drag the number <strong>50</strong> that appears on the left side, and slide it upwards until it says <strong>30</strong>.<br><img style="width: 276.00px" src="./3rd color_files/c5f4ba0a03952502.png"></li>
+</ol>
+<aside class="special"><p><strong>Tip</strong>: Using the bias attribute instead of margins or padding results in a more pleasing layout on different screen sizes and orientations.</p>
+<ul>
+<li>If a view is constrained to other views on both its top and bottom edges, use vertical bias to tweak its vertical position. </li>
+<li>If a view is constrained on both its left and right edges, use horizontal bias to tweak its horizontal position. </li>
+</ul>
+</aside>
+<ol type="1" start="6">
+<li>Make sure the <strong>layout_width</strong> is <strong>wrap_content</strong>, and the horizontal bias is 50 (<code>app:layout_constraintHorizontal_bias="0.5"</code> in XML).</li>
+</ol>
+<h2 is-upgraded=""><strong>Step 5: Run your app</strong></h2>
+<p>If you implemented all the updates, your app will look like the following figure. If you used different colors and fonts, then your app will look a bit different.</p>
+<p class="image-container"><img style="width: 285.50px" src="./3rd color_files/214cfb8299ed8d36.png"><br><br></p>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Task: Make your app interactive" duration="0" step="8"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">8. Task: Make your app interactive</h2>
+        <p>You have added buttons to your app's main screen, but currently the buttons do nothing. In this task, you will make your buttons respond when the user presses them.</p>
+<p>First you will make the <strong>Toast</strong> button show a pop-up message called a <em>toast</em>. Next you will make the <strong>Count</strong> button update the number that is displayed in the <code>TextView</code>.</p>
+<h2 class="checklist" is-upgraded=""><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>How to find a view by its ID.</li>
+<li>How to add click listeners for a view.</li>
+<li>How to set and get property values of a view from your code.</li>
+</ul>
+<h2 is-upgraded=""><strong>Step 1: Enable auto imports</strong></h2>
+<p>To make your life easier, you can enable auto-imports so that Android Studio automatically imports any classes that are needed by the Kotlin code.</p>
+<ol type="1" start="1">
+<li>In Android Studio, open the settings editor by going to <strong>File</strong> &gt; <strong>Other Settings</strong> &gt; <strong>Preferences for New Projects</strong>.</li>
+<li>Select <strong>Auto Imports</strong>. In the <strong>Java</strong> section, make sure <strong>Add Unambiguous Imports on the fly</strong> is checked.<br><br><img style="width: 491.80px" src="./3rd color_files/5507aa63b0db10d5.png"></li>
+<li>Close the settings editor.<br></li>
+</ol>
+<h2 is-upgraded=""><strong>Step 2: Show a toast</strong></h2>
+<p>In this step, you will attach a Kotlin method to the <strong>Toast</strong> button to show a toast when the user presses the button. A toast is a short message that appears briefly at the bottom of the screen.</p>
+<p class="image-container"><img style="width: 284.50px" src="./3rd color_files/f6664dc276276836.png"></p>
+<ol type="1" start="1">
+<li>Open <code>FirstFragment.kt</code>. (<strong>app</strong> &gt; <strong>java</strong> &gt; <strong>com.example.android.myfirstapp &gt; FirstFragment</strong>).<br><br>This class has only two methods, <code>onCreateView()</code> and <code>onViewCreated()</code>. These methods execute when the fragment starts.<br><br>As mentioned earlier, the <a href="https://developer.android.com/reference/android/view/View#ids" target="_blank">id</a> for a view helps you identify that view distinctly from other views. Using the <code>findViewByID()</code> method, your code can find the <code>random_button</code> using its id, <code>R.id.random_button</code>.<br></li>
+<li>Take a look at <code>onViewCreated()</code>. It sets up a click listener for the <code>random_button</code>, which was originally created as the <strong>Next</strong> button.</li>
+</ol>
+<pre><code><span class="pln">view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">Button</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">random_button</span><span class="pun">).</span><span class="pln">setOnClickListener </span><span class="pun">{</span><span class="pln">
+        val action </span><span class="pun">=</span><span class="pln"> </span><span class="typ">FirstFragmentDirections</span><span class="pun">.</span><span class="pln">actionFirstFragmentToSecondFragment</span><span class="pun">(</span><span class="str">"From FirstFragment"</span><span class="pun">)</span><span class="pln">
+        findNavController</span><span class="pun">().</span><span class="pln">navigate</span><span class="pun">(</span><span class="pln">action</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+<p>Here is what this code does:</p>
+<ul>
+<li>Use the <code>findViewById()</code> method with the id of the desired view as an argument, then set a click listener on that view. </li>
+<li>In the body of the click listener, create an action, which in this case is for navigating to another fragment, and navigate there. (You will learn about that later.)</li>
+</ul>
+<ol type="1" start="3">
+<li>Just below that click listener, add code to set up a click listener for the <code>toast_button</code>, which creates and displays a toast. Here is the code:</li>
+</ol>
+<pre><code><span class="com">// find the toast_button by its ID and set a click listener</span><span class="pln">
+view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">Button</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">toast_button</span><span class="pun">).</span><span class="pln">setOnClickListener </span><span class="pun">{</span><span class="pln">
+   </span><span class="com">// create a Toast with some text, to appear for a short time</span><span class="pln">
+   val myToast </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">makeText</span><span class="pun">(</span><span class="pln">context</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Hello Toast!"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">LENGTH_SHORT</span><span class="pun">)</span><span class="pln">
+   </span><span class="com">// show the Toast</span><span class="pln">
+   myToast</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<ol type="1" start="4">
+<li>Run the app and press the <strong>Toast</strong> button. Do you see the toasty message at the bottom of the screen?<br><img style="width: 284.50px" src="./3rd color_files/f6664dc276276836.png"></li>
+<li>If you want, extract the message string into a resource as you did for the button labels.</li>
+</ol>
+<p>You have learned that to make a view interactive you need to set up a click listener for the view which says what to do when the view (button) is clicked on. The click listener can either:</p>
+<ul>
+<li>Implement a small amount of code directly.</li>
+<li>Call a method that defines the desired click behavior in the activity.</li>
+</ul>
+<h2 is-upgraded=""><strong>Step 3: Make the Count button update the number on the screen</strong></h2>
+<p>The method that shows the toast is very simple; it does not interact with any other views in the layout. In the next step, you add behavior to your layout to find and update other views.</p>
+<p>Update the <strong>Count</strong> button so that when it is pressed, the number on the screen increases by 1.</p>
+<ol type="1" start="1">
+<li>In the <code>fragment_first.xml</code> layout file, notice the <code>id</code> for the <code>TextView</code>:<br></li>
+</ol>
+<pre><code><span class="pln">&lt;TextView
+   android:id="@+id/textview_first"</span></code></pre>
+<ol type="1" start="2">
+<li>In <code>FirstFragment.kt</code>, add a click listener for the <code>count_button</code> below the other click listeners in <code>onViewCreated()</code>. Because it has a little more work to do, have it call a new method, <code>countMe()</code>.</li>
+</ol>
+<pre><code><span class="pln">view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">Button</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">count_button</span><span class="pun">).</span><span class="pln">setOnClickListener </span><span class="pun">{</span><span class="pln">
+   countMe</span><span class="pun">(</span><span class="pln">view</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<ol type="1" start="3">
+<li>In the <code>FirstFragment</code> class, add the method <code>countMe()</code> that takes a single <code>View</code> argument. This method will be invoked when the <strong>Count</strong> button is clicked and the click listener called. </li>
+</ol>
+<pre><code><span class="pln">fun countMe </span><span class="pun">(</span><span class="pln">view</span><span class="pun">:</span><span class="pln"> </span><span class="typ">View</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+</span><span class="pun">}</span></code></pre>
+<ol type="1" start="4">
+<li>Use the <code>findViewById()</code> method to get the <code>TextView</code> that shows the count. This method returns a <code>View</code>, so you must cast the result to a <code>TextView</code>. Specify the <code>id</code> of the view to get, <code>textview_first</code>.</li>
+</ol>
+<pre><code><span class="pln">   </span><span class="pun">...</span><span class="pln">
+   </span><span class="com">// Get the text view</span><span class="pln">
+   val showCountTextView </span><span class="pun">=</span><span class="pln"> view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">TextView</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">textview_first</span><span class="pun">)</span></code></pre>
+<ol type="1" start="5">
+<li>Get the value of the <code>showCountTextView</code>.</li>
+</ol>
+<pre><code><span class="pln">   </span><span class="pun">...</span><span class="pln">
+   </span><span class="com">// Get the value of the text view.</span><span class="pln">
+   val countString </span><span class="pun">=</span><span class="pln"> showCountTextView</span><span class="pun">.</span><span class="pln">text</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">()</span></code></pre>
+<ol type="1" start="6">
+<li>Convert the value to a number, and increment it.</li>
+</ol>
+<pre><code><span class="pln">   </span><span class="pun">...</span><span class="pln">
+   </span><span class="com">// Convert value to a number and increment it</span><span class="pln">
+   </span><span class="kwd">var</span><span class="pln"> count</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Integer</span><span class="pun">.</span><span class="pln">parseInt</span><span class="pun">(</span><span class="pln">countString</span><span class="pun">)</span><span class="pln">
+   count</span><span class="pun">++</span></code></pre>
+<ol type="1" start="7">
+<li>Display the new value in the <code>TextView</code> by programmatically setting the <code>text</code> property of the <code>TextView</code>.</li>
+</ol>
+<pre><code><span class="pln">   </span><span class="pun">...</span><span class="pln">
+   </span><span class="com">// Display the new value in the text view.</span><span class="pln">
+   showCountTextView</span><span class="pun">.</span><span class="pln">text </span><span class="pun">=</span><span class="pln"> count</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">()</span></code></pre>
+<p>Here is the whole method:</p>
+<pre><code><span class="pln">fun countMe </span><span class="pun">(</span><span class="pln">view</span><span class="pun">:</span><span class="pln"> </span><span class="typ">View</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="com">// Get the text view</span><span class="pln">
+   val showCountTextView </span><span class="pun">=</span><span class="pln"> view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">TextView</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">textview_first</span><span class="pun">)</span><span class="pln">
+
+   </span><span class="com">// Get the value of the text view.</span><span class="pln">
+   val countString </span><span class="pun">=</span><span class="pln"> showCountTextView</span><span class="pun">.</span><span class="pln">text</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">()</span><span class="pln">
+
+   </span><span class="com">// Convert value to a number and increment it</span><span class="pln">
+   </span><span class="kwd">var</span><span class="pln"> count</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Int</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Integer</span><span class="pun">.</span><span class="pln">parseInt</span><span class="pun">(</span><span class="pln">countString</span><span class="pun">)</span><span class="pln">
+   count</span><span class="pun">++</span><span class="pln">
+
+   </span><span class="com">// Display the new value in the text view.</span><span class="pln">
+   showCountTextView</span><span class="pun">.</span><span class="pln">text </span><span class="pun">=</span><span class="pln"> count</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<ol type="1" start="8">
+<li>Run your app. Press the <strong>Count</strong> button and watch the count update.<br></li>
+</ol>
+<h2 is-upgraded=""><img style="width: 289.50px" src="./3rd color_files/f2b19b9209cad4f4.png"></h2>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Task: Implement the second fragment" duration="0" step="9"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">9. Task: Implement the second fragment</h2>
+        <p>So far, you've focused on the first screen of your app. Next, you will update the <strong>Random</strong> button to display a random number between 0 and the current count on a second screen.</p>
+<p class="image-container"><img style="width: 286.74px" src="./3rd color_files/c7029fe48ec2a802.png"></p>
+<h2 class="checklist" is-upgraded=""><strong>What you'll learn</strong></h2>
+<ul class="checklist">
+<li>How to pass information to a second fragment.</li>
+</ul>
+<h2 is-upgraded=""><strong>Update the layout for the second fragment</strong></h2>
+<p>The screen for the new fragment will display a heading title and the random number. Here is what the screen will look like in the design view:<br><img style="width: 327.71px" src="./3rd color_files/afa89b3ebe019a44.png"><br>The <strong>%d</strong> indicates that part of the string will be replaced with a number. The <strong>R</strong> is just a placeholder.</p>
+<h2 is-upgraded=""><strong>Step 1: Add a TextView for the random number</strong></h2>
+<ol type="1" start="1">
+<li>Open <code>fragment_second.xml</code> (<strong>app &gt; res &gt; layout &gt; fragment_second.xml</strong>). Notice that it has a <code>ConstraintLayout</code> that contains a <code>TextView</code> and a <code>Button</code>.</li>
+<li>Remove the chain constraints between the <code>TextView</code> and the <code>Button</code>.<br><img style="width: 205.50px" src="./3rd color_files/1e511fff7a126d1d.png"></li>
+<li>Add another <code>TextView</code> from the palette and drop it near the middle of the screen. This <code>TextView</code> will be used to display a random number between 0 and the current count from the first <code>Fragment</code>.</li>
+<li>Set the <code>id</code> to <strong><code>@+id/textview_random</code></strong> (<code>textview_random</code> in the <strong>Attributes</strong> panel.)</li>
+<li>Constrain the top edge of the new <code>TextView</code> to the bottom of the first <code>TextView</code>, the left edge to the left of the screen, and the right edge to the right of the screen, and the bottom to the top of the <strong>Previous</strong> button.</li>
+<li>Set both width and height to <strong>wrap_content</strong>.</li>
+<li>Set the <strong>textColor</strong> to <strong>@android:color/white</strong>, set the <strong>textSize</strong> to <strong>72sp</strong>, and the <strong>textStyle</strong> to <strong>bold</strong>.</li>
+</ol>
+<p class="image-container"><img style="width: 238.20px" src="./3rd color_files/c021ef6b9f4e1c0f.png"></p>
+<ol type="1" start="8">
+<li>Set the text to "<code>R</code>". This text is just a placeholder until the random number is generated.</li>
+<li>Set the <strong>layout_constraintVertical_bias</strong> to <strong>0.45</strong>. <br><br>This <code>TextView</code> is constrained on all edges, so it's better to use a vertical bias than margins to adjust the vertical position, to help the layout look good on different screen sizes and orientations.</li>
+</ol>
+<p>Here is the XML code for the <code>TextView</code> that displays the random number:</p>
+<pre><code><span class="tag">&lt;TextView</span><span class="pln">
+   </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/textview_random"</span><span class="pln">
+   </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+   </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+   </span><span class="atn">android:text</span><span class="pun">=</span><span class="atv">"R"</span><span class="pln">
+   </span><span class="atn">android:textColor</span><span class="pun">=</span><span class="atv">"@android:color/white"</span><span class="pln">
+   </span><span class="atn">android:textSize</span><span class="pun">=</span><span class="atv">"72sp"</span><span class="pln">
+   </span><span class="atn">android:textStyle</span><span class="pun">=</span><span class="atv">"bold"</span><span class="pln">
+   </span><span class="atn">app:layout_constraintBottom_toTopOf</span><span class="pun">=</span><span class="atv">"@+id/button_second"</span><span class="pln">
+   </span><span class="atn">app:layout_constraintEnd_toEndOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+   </span><span class="atn">app:layout_constraintStart_toStartOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+   </span><span class="atn">app:layout_constraintTop_toBottomOf</span><span class="pun">=</span><span class="atv">"@+id/textview_second"</span><span class="pln">
+   </span><span class="atn">app:layout_constraintVertical_bias</span><span class="pun">=</span><span class="atv">"0.45"</span><span class="pln"> </span><span class="tag">/&gt;</span></code></pre>
+<h2 is-upgraded=""><strong>Step 2: Update the TextView to display the header</strong></h2>
+<ol type="1" start="1">
+<li>In <code>fragment_second.xml</code>, select <code>textview_second</code>, which currently has the text <code>"Hello second fragment. Arg: %1$s"</code> in the <code>hello_second_fragment</code> string resource.</li>
+<li>If the <code>text</code> isn't set, set it to the <code>hello_second_fragment</code> string resource.</li>
+</ol>
+<pre><code><span class="pln">android</span><span class="pun">:</span><span class="pln">text</span><span class="pun">=</span><span class="str">"@string/hello_second_fragment"</span></code></pre>
+<ol type="1" start="3">
+<li>Change the <code>id</code> to <strong><code>@+id/textview_header</code></strong> in the <strong>Attributes</strong> panel.</li>
+<li>Set the width to <strong>match_constraint</strong>, but set the height to <strong>wrap_content</strong>, so the height will change as needed to match the height of the content.</li>
+<li>Set top, left and right margins to <code>24dp</code>. Left and right margins may also be referred to as "start" and "end" to support localization for right to left languages.</li>
+<li>Remove any bottom constraint.</li>
+<li>Set the text color to <code>@color/colorPrimaryDark</code> and the text size to <code>24sp</code>. </li>
+<li>Change <code>hello_second_fragment</code> to "<code>Here is a random number between 0 and %d.</code>"</li>
+<li>Use <strong>Refactor &gt; Rename...</strong> to change the name of <code>hello_second_fragment</code> to <code>random_heading</code>.<br></li>
+</ol>
+<p>Here is the XML code for the <code>TextView</code> that displays the heading:</p>
+<pre><code><span class="tag">&lt;TextView</span><span class="pln">
+   </span><span class="atn">android:id</span><span class="pun">=</span><span class="atv">"@+id/textview_header"</span><span class="pln">
+   </span><span class="atn">android:layout_width</span><span class="pun">=</span><span class="atv">"0dp"</span><span class="pln">
+   </span><span class="atn">android:layout_height</span><span class="pun">=</span><span class="atv">"wrap_content"</span><span class="pln">
+   </span><span class="atn">android:layout_marginStart</span><span class="pun">=</span><span class="atv">"24dp"</span><span class="pln">
+   </span><span class="atn">android:layout_marginLeft</span><span class="pun">=</span><span class="atv">"24dp"</span><span class="pln">
+   </span><span class="atn">android:layout_marginTop</span><span class="pun">=</span><span class="atv">"24dp"</span><span class="pln">
+   </span><span class="atn">android:layout_marginEnd</span><span class="pun">=</span><span class="atv">"24dp"</span><span class="pln">
+   </span><span class="atn">android:layout_marginRight</span><span class="pun">=</span><span class="atv">"24dp"</span><span class="pln">
+   </span><span class="atn">android:text</span><span class="pun">=</span><span class="atv">"@string/random_heading"</span><span class="pln">
+   </span><span class="atn">android:textColor</span><span class="pun">=</span><span class="atv">"@color/colorPrimaryDark"</span><span class="pln">
+   </span><span class="atn">android:textSize</span><span class="pun">=</span><span class="atv">"24sp"</span><span class="pln">
+   </span><span class="atn">app:layout_constraintEnd_toEndOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+   </span><span class="atn">app:layout_constraintStart_toStartOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln">
+   </span><span class="atn">app:layout_constraintTop_toTopOf</span><span class="pun">=</span><span class="atv">"parent"</span><span class="pln"> </span><span class="tag">/&gt;</span></code></pre>
+<p class="image-container"><img style="width: 248.48px" src="./3rd color_files/fed94f0294bd1e8d.png"></p>
+<h2 is-upgraded=""><strong>Step 3: Change the background color of the layout</strong></h2>
+<p>Give your new activity a different background color than the first activity:</p>
+<ol type="1" start="1">
+<li>In <code>colors.xml</code>, add a new color resource:<br></li>
+</ol>
+<pre><code><span class="tag">&lt;color</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"screenBackground2"</span><span class="tag">&gt;</span><span class="pln">#26C6DA</span><span class="tag">&lt;/color&gt;</span></code></pre>
+<ol type="1" start="2">
+<li>In the layout for the second activity, <code>fragment_second.xml</code>, set the background of the <code>ConstraintLayout</code> to the new color.<br><br>In the <strong>Attributes</strong> panel:<br><br><img style="width: 398.00px" src="./3rd color_files/c1aa5f10599abe04.png"><br><br><br>Or in XML:<br></li>
+</ol>
+<pre><code><span class="pln">android</span><span class="pun">:</span><span class="pln">background</span><span class="pun">=</span><span class="str">"@color/screenBackground2"</span></code></pre>
+<p>Your app now has a completed layout for the second fragment. But if you run your app and press the <strong>Random</strong> button, it will crash. The click handler that Android Studio set up for that button needs some changes. In the next task, you will explore and fix this error.</p>
+<h2 is-upgraded=""><strong>Step 4: Examine the navigation graph</strong></h2>
+<p>When you created your project, you chose <strong>Basic Activity</strong> as the template for the new  project. When Android Studio uses the <strong>Basic Activity</strong> template for  a new project, it sets up two fragments, and a navigation graph to connect the two. It also set up a button to send a string argument from the first fragment to the second. This is the button you changed into the Random button. And now you want to send a number instead of a string.</p>
+<ol type="1" start="1">
+<li>Open <code>nav_graph.xml</code> (<strong>app &gt; res &gt; navigation &gt; nav_graph.xml</strong>).</li>
+</ol>
+<p>A screen similar to the <strong>Layout Editor</strong> in <strong>Design</strong> view appears. It shows the two fragments with some arrows between them. You can zoom with <strong>+</strong> and <strong>-</strong> buttons in the lower right, as you did with the <strong>Layout Editor</strong>.</p>
+<ol type="1" start="2">
+<li>You can freely move the elements in the Layout Editor. For example, If the fragments appear with <code>SecondFragment</code> to the left, drag <code>FirstFragment</code> to the left of <code>SecondFragment</code> so they appear in the order you work with them.</li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="./3rd color_files/80f30adb22da471a.png"></p>
+<h2 is-upgraded=""><strong>Step 5: Change the arg type for the navigation action</strong></h2>
+<p>Android Studio set the type for the data passed between the fragments to a string, but you need to change it to a number in order to pass the current count.</p>
+<ol type="1" start="1">
+<li>In the navigation graph, click on <code>FirstFragment</code>, and look at the <strong>Attributes</strong> panel to the right. (If the panel isn't showing, click on the vertical <strong>Attributes</strong> label to the right.)</li>
+<li>In the <strong>Actions</strong> section, it shows what action will happen for navigation, namely going to <code>SecondFragment</code>.</li>
+<li>Click on <code>SecondFragment</code>, and look at the <strong>Attributes</strong> panel.</li>
+</ol>
+<p>The <strong>Arguments</strong> section shows <code>myArg: string</code>.</p>
+<p class="image-container"><img style="width: 370.00px" src="./3rd color_files/a4e27cc0461ef4c4.png"></p>
+<ol type="1" start="4">
+<li>Double-click on <code>myArg: string</code>, and the <strong>Update Argument</strong> dialog appears.<br><img style="width: 326.00px" src="./3rd color_files/550ace6f774eea3f.png"></li>
+<li>Change the <strong>Type</strong> from <strong>String</strong> to <strong>Integer</strong>. (You may need to scroll up to see <strong>Integer</strong>.)</li>
+<li>Click <strong>Update</strong> to close the dialog.</li>
+</ol>
+<h2 is-upgraded=""><strong>Step 6: Send the count to the second fragment</strong></h2>
+<p>The <strong>Next</strong>/<strong>Random</strong> button was set up by Android Studio to send the string "<code>From FirstFragment</code>" to the second fragment. In this step you'll change it to send a number for the current count instead. You will get the current count from the text view that displays it, and pass that to the second fragment.</p>
+<ol type="1" start="1">
+<li>Open <code>FirstFragment.kt</code> (<strong>app &gt; java &gt; com.example.myfirstapp &gt; FirstFragment</strong>)</li>
+<li>Find the method <code>onViewCreated()</code> and notice the code that sets up the <code>action</code> to send <code>"From FirstFragment"</code> from <code>FirstFragment</code> to <code>SecondFragment</code>.</li>
+<li>Just above it, but still inside the <code>setOnClickListener</code> code, add a line to find the count text view, <code>textview_first</code>.</li>
+</ol>
+<pre><code><span class="pln">val showCountTextView </span><span class="pun">=</span><span class="pln"> view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">TextView</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">textview_first</span><span class="pun">)</span></code></pre>
+<ol type="1" start="4">
+<li>Get the text of the view and convert it to an <code>Int</code>.</li>
+</ol>
+<pre><code><span class="pln">val currentCount </span><span class="pun">=</span><span class="pln"> showCountTextView</span><span class="pun">.</span><span class="pln">text</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">().</span><span class="pln">toInt</span><span class="pun">()</span></code></pre>
+<ol type="1" start="5">
+<li>Change the argument of <code>actionFirstFragmentToSecondFragment()</code> from the string <code>"From FirstFragment"</code> to pass <code>currentCount</code> instead.<br></li>
+</ol>
+<pre><code><span class="pln"> val action </span><span class="pun">=</span><span class="pln"> </span><span class="typ">FirstFragmentDirections</span><span class="pun">.</span><span class="pln">actionFirstFragmentToSecondFragment</span><span class="pun">(</span><span class="pln">currentCount</span><span class="pun">)</span><span class="pln">
+       findNavController</span><span class="pun">().</span><span class="pln">navigate</span><span class="pun">(</span><span class="pln">action</span><span class="pun">)</span></code></pre>
+<p>Here is the whole method, including the code you added earlier:</p>
+<pre><code><span class="kwd">override</span><span class="pln"> fun onViewCreated</span><span class="pun">(</span><span class="pln">view</span><span class="pun">:</span><span class="pln"> </span><span class="typ">View</span><span class="pun">,</span><span class="pln"> savedInstanceState</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Bundle</span><span class="pun">?)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">super</span><span class="pun">.</span><span class="pln">onViewCreated</span><span class="pun">(</span><span class="pln">view</span><span class="pun">,</span><span class="pln"> savedInstanceState</span><span class="pun">)</span><span class="pln">
+
+   view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">Button</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">random_button</span><span class="pun">).</span><span class="pln">setOnClickListener </span><span class="pun">{</span><span class="pln">
+       val showCountTextView </span><span class="pun">=</span><span class="pln"> view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">TextView</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">textview_first</span><span class="pun">)</span><span class="pln">
+       val currentCount </span><span class="pun">=</span><span class="pln"> showCountTextView</span><span class="pun">.</span><span class="pln">text</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">().</span><span class="pln">toInt</span><span class="pun">()</span><span class="pln">
+       val action </span><span class="pun">=</span><span class="pln"> </span><span class="typ">FirstFragmentDirections</span><span class="pun">.</span><span class="pln">actionFirstFragmentToSecondFragment</span><span class="pun">(</span><span class="pln">currentCount</span><span class="pun">)</span><span class="pln">
+       findNavController</span><span class="pun">().</span><span class="pln">navigate</span><span class="pun">(</span><span class="pln">action</span><span class="pun">)</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+
+   </span><span class="com">// find the toast_button by its ID</span><span class="pln">
+   view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">Button</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">toast_button</span><span class="pun">).</span><span class="pln">setOnClickListener </span><span class="pun">{</span><span class="pln">
+       </span><span class="com">// create a Toast with some text, to appear for a short time</span><span class="pln">
+       val myToast </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">makeText</span><span class="pun">(</span><span class="pln">context</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Hello Toast!"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Toast</span><span class="pun">.</span><span class="pln">LENGTH_SHORT</span><span class="pun">)</span><span class="pln">
+       </span><span class="com">// show the Toast</span><span class="pln">
+       myToast</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+
+   view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">Button</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">count_button</span><span class="pun">).</span><span class="pln">setOnClickListener </span><span class="pun">{</span><span class="pln">
+       countMe</span><span class="pun">(</span><span class="pln">view</span><span class="pun">)</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<ol type="1" start="6">
+<li>To get rid of the error, select <strong>Build &gt; Rebuild Project</strong> so Android Studio will incorporate all your recent changes, including the navigation graph.</li>
+<li>Run your app. Click the <strong>Count</strong> button a few times. Now when you press the <strong>Random</strong> button, the second screen shows the correct string in the header, but still no random number, because you need to write some code to do that.</li>
+</ol>
+<h2 is-upgraded=""><strong>Step 7: Update SecondFragment to compute and display a random number</strong></h2>
+<p>You have written the code to send the current count to the second fragment. The next step is to add code to <code>SecondFragment.kt</code> to retrieve and use the current count.</p>
+<ol type="1" start="1">
+<li>In <code>SecondFragment.kt</code> in <code>onViewCreated()</code> below the code that sets header text, add code to get a random number between 0 and the count.</li>
+</ol>
+<pre><code><span class="pln">val count </span><span class="pun">=</span><span class="pln"> args</span><span class="pun">.</span><span class="pln">myArg
+val random </span><span class="pun">=</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">Random</span><span class="pun">()</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> randomNumber </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">count </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   randomNumber </span><span class="pun">=</span><span class="pln"> random</span><span class="pun">.</span><span class="pln">nextInt</span><span class="pun">(</span><span class="pln">count </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<ol type="1" start="2">
+<li>Add code to convert that number into a string and set it as the text for <code>textview_random</code>.</li>
+</ol>
+<pre><code><span class="pln">view</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">&lt;</span><span class="typ">TextView</span><span class="pun">&gt;(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">textview_random</span><span class="pun">).</span><span class="pln">text </span><span class="pun">=</span><span class="pln"> randomNumber</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">()</span></code></pre>
+<ol type="1" start="3">
+<li>Run the app. Press the <strong>Count</strong> button a few times, then press the <strong>Random</strong> button. Does the app display a random number in the new activity?<br><img style="width: 589.08px" src="./3rd color_files/24a081ec057c026e.png"></li>
+</ol>
+<p>Congratulations, you have built your first Android app! </p>
+
+
+      </div></div></google-codelab-step><google-codelab-step label="Learn more" duration="0" step="10"><div class="instructions"><div class="inner"><h2 is-upgraded="" class="step-title">10. Learn more</h2>
+        <p>The intention of this codelab was to get you started building Android apps. We hope you want to know a lot more though, like how do I save data? How do I run background tasks? How do I display a list of photos? How do I ...</p>
+<p>We encourage you to keep learning. We have more Android in Kotlin courses built by Google to help you on your learning journey</p>
+<h2 is-upgraded=""><strong>Written tutorials</strong></h2>
+<ul>
+<li><a href="https://developer.android.com/courses/kotlin-android-fundamentals/overview" target="_blank">Android Developer Fundamentals</a> teaches programmers to build Android apps. This course is also available in some schools. </li>
+<li><a href="https://developer.android.com/courses/kotlin-bootcamp/overview" target="_blank">Kotlin Bootcamp codelabs course</a> is an introduction to <strong>Kotlin</strong> for programmers. You need experience with an object oriented programming language (Java, C++, Python) to take this course..</li>
+<li>Find more at <a href="https://developer.android.com/training/index.html" target="_blank">developer.android.com</a>, the official Android developer documentation from Google.</li>
+</ul>
+<h2 is-upgraded=""><strong>Online courses</strong></h2>
+<ul>
+<li><a href="https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011" target="_blank">Kotlin Bootcamp for Programmers</a>: This is an introduction to <strong>Kotlin</strong> for programmers. You need some experience with an object oriented programming language (Java, C++, Python) to take this course.</li>
+</ul>
+<p>These interactive, video-based courses were created by Google experts in collaboration with Udacity. Take these courses at your own pace in your own time.</p>
+<ul>
+<li><a href="https://www.udacity.com/course/developing-android-apps-with-kotlin--ud9012" target="_blank">Developing Android Apps in Kotlin</a>: If you know how to program, learn how to build Android apps. This course uses <strong>Kotlin</strong>.</li>
+</ul>
+
+
+      </div></div></google-codelab-step></div><div id="controls"><div id="fabs"><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#" id="previous-step" title="Previous step">Back</a><div class="spacer"></div><a href="https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/#" id="next-step" title="Next step">Next</a><a href="https://codelabs.developers.google.com/" id="done" hidden="" title="Codelab complete">Done</a></div></div></div></google-codelab>
+
+  <script src="./3rd color_files/native-shim.js.download"></script>
+  <script src="./3rd color_files/custom-elements.min.js.download"></script>
+  <script src="./3rd color_files/prettify.js.download"></script>
+  <script src="./3rd color_files/codelab-elements.js.download"></script>
+
+
+
+</body></html>
